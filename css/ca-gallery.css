@@ -104,6 +104,15 @@ body {
   border: 7px solid whitesmoke;
 }
 
+.offcanvas-aside .aside-close-btn {
+  position: absolute; 
+  top:1em ;
+  right:1em;
+  font-size: 2em;
+  color: #222222;
+  cursor: pointer;
+}
+
 /* .offcanvas-aside p {
   text-align: center;
 } */
@@ -657,6 +666,11 @@ header.masthead .intro-text .intro-heading {
     margin-bottom: 1rem;
   }
 }
+
+#me {
+  padding-bottom: 1em !important;
+}
+
 footer {
   padding: 25px 0;
   text-align: center;
