@@ -56,12 +56,12 @@
         <img src="img/my-picture.jpg" alt="">
         <form>
           <label for="contact-email">Your E-mail</label>
-          <input type="email" name="contact-email" id="contact-email" placeholder="name@example.com"/>
+          <input type="email" name="contact-email" id="contact-email" placeholder="name@example.com" required/>
           <label for="contact-subject">Subject</label>
-          <input type="text" name="contact-subject" id="user-subject" placeholder="Type subject here"/>
+          <input type="text" name="contact-subject" id="user-subject" placeholder="Type subject here" required/>
           <label for="contact-body">Message Body</label>
-          <textarea name="contact-body" id="contact-body" placeholder="Type message text here"></textarea>
-          <button type="button" class="btn btn-primary">Submit</button>
+          <textarea name="contact-body" id="contact-body" placeholder="Type message text here" required></textarea>
+          <button type="submit" class="btn btn-primary">Send by Gmail</button>
         </form>
       </section>
     </aside>
@@ -285,5 +285,6 @@
     <!-- added JS -->
     <script src="js/services/portfolio-service.js"></script>
     <script src="js/controllers/portfolio.js"></script>
+    <script src="js/controllers/contact-form.js"></script>
   </body>
 </html>
