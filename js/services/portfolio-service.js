@@ -8,7 +8,7 @@ var gProjs = [
     desc: 'mini game written in vanilla JavaScript',
     dayAtCourse: 10,
     url: null,
-    publishedAt: 1448693940000,
+    publishedAt: 'March 2022',
     labels: ['board-games', 'front-end'],
   },
 ]

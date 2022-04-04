@@ -1,6 +1,11 @@
 'use strict'
 
-$(document).ready(renderPortfolioItems)
+$(document).ready(init)
+
+function init() {
+  renderPortfolioItems()
+  renderPortfolioModals()
+}
 
 function renderPortfolioItems() {
   const projects = getProjects()
@@ -10,7 +15,7 @@ function renderPortfolioItems() {
     <a
       class="portfolio-link"
       data-toggle="modal"
-      href="#portfolioModal1"
+      href="#portfolioModal-${proj.id}"
     >
       <div class="portfolio-hover">
         <div class="portfolio-hover-content">
@@ -31,4 +36,62 @@ function renderPortfolioItems() {
   )
 
   $('.portfolio-grid').html(strHtml.join(''))
+}
+
+function renderPortfolioModals() {
+  const projects = getProjects()
+  const strHtml = projects.map(
+    (proj) => `<div
+  class="portfolio-modal modal fade"
+  id="portfolioModal-${proj.id}"
+  tabindex="-1"
+  role="dialog"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+        <div class="lr">
+          <div class="rl"></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div class="modal-body">
+              <h2>${proj.name}</h2>
+              <p class="item-intro text-muted">
+                ${proj.title}
+              </p>
+              <img
+                class="img-fluid d-block mx-auto"
+                src="img/portfolio/${proj.id}-thumbnail.jpg"
+                alt=""
+              />
+              <p>
+                ${proj.desc}
+              </p>
+              <ul class="list-inline text-left">
+                <li><b>Date:</b> ${proj.publishedAt}</li>
+                <li><b>Day at course:</b> ${proj.dayAtCourse}</li>
+                <li><b>Category:</b> ${proj.labels.join(', ')}</li>
+              </ul>
+              <button
+                class="btn btn-primary"
+                data-dismiss="modal"
+                type="button"
+              >
+                <i class="fa fa-times"></i>
+                Close Project
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>`
+  )
+
+  $('.portfolio-modals').html(strHtml)
 }
