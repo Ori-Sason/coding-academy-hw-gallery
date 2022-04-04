@@ -2,6 +2,11 @@
 
 $('.offcanvas-aside form').on('submit', onContactFormSubmit)
 
+function toggleAside(){
+    document.querySelector('.offcanvas-btn').classList.toggle('offcanvas-btn-open');
+    document.querySelector('.offcanvas-aside').classList.toggle('offcanvas-aside-open');    
+}
+
 function onContactFormSubmit(ev){
     ev.preventDefault()
     const $elEmail = $('.offcanvas-aside input[type=email]')
@@ -15,5 +20,5 @@ function onContactFormSubmit(ev){
     $elBody.val('')
 
     window.open(emailUrl, '_blank')
-    openCanvas()
+    toggleAside()
 }
