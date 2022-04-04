@@ -43,7 +43,7 @@ var gProjs = [
   },
   {
     id: '05-pacman',
-    name: 'Pacman',
+    name: 'Pac-Man',
     title: 'can you beat the ghosts?',
     desc: 'Mini game written in vanilla JavaScript',
     dayAtCourse: 11,
@@ -59,7 +59,7 @@ var gProjs = [
     dayAtCourse: 13,
     url: 'https://ori-sason.github.io/Minesweeper/',
     publishedAt: 'March 2022',
-    labels: ['board-games', 'front-end'],
+    labels: ['board-games', 'front-end', 'sprint'],
   },
   {
     id: '07-book-shop',
