@@ -20,7 +20,7 @@ function renderPortfolioItems() {
     >
       <div class="portfolio-hover">
         <div class="portfolio-hover-content">
-          <i class="fa fa-plus fa-3x"></i>
+          <i class="fa fa-eye fa-3x"></i>
         </div>
       </div>
       <img
