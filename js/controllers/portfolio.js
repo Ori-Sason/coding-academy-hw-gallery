@@ -4,7 +4,7 @@ $(document).ready(init)
 
 function init() {
   renderPortfolioItems()
-  renderPortfolioModals()
+  onPortfolioModal()
 }
 
 function renderPortfolioItems() {
@@ -15,7 +15,8 @@ function renderPortfolioItems() {
     <a
       class="portfolio-link"
       data-toggle="modal"
-      href="#portfolioModal-${proj.id}"
+      href="#portfolioModal"
+      onclick="onPortfolioModal('${proj.id}')"
     >
       <div class="portfolio-hover">
         <div class="portfolio-hover-content">
@@ -35,64 +36,28 @@ function renderPortfolioItems() {
   </div>`
   )
 
-  $('.portfolio-grid').html(strHtml.join(''))
+  $('.portfolio-grid').html(strHtml)
 }
 
-function renderPortfolioModals() {
-  const projects = getProjects()
-  const strHtml = projects.map(
-    (proj) => `<div
-  class="portfolio-modal modal fade"
-  id="portfolioModal-${proj.id}"
-  tabindex="-1"
-  role="dialog"
-  aria-hidden="true"
->
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="close-modal" data-dismiss="modal">
-        <div class="lr">
-          <div class="rl"></div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <div class="modal-body">
-              <h2>${proj.name}</h2>
-              <p class="item-intro text-muted">
-                ${proj.title}
-              </p>
-              <img
-                class="img-fluid d-block mx-auto"
-                src="img/portfolio/${proj.id}.png"
-                alt=""
-              />
-              <p>
-                ${proj.desc}
-              </p>
-              <ul class="list-inline text-left">
-                <li><b>Date:</b> ${proj.publishedAt}</li>
-                <li><b>Day at course:</b> ${proj.dayAtCourse}</li>
-                <li><b>Category:</b> ${proj.labels.join(', ')}</li>
-              </ul>
-              <button
-                class="btn btn-primary"
-                data-dismiss="modal"
-                onclick=(window.open("${proj.url? proj.url : 'projs/'+ proj.id +'/'}"))
-                type="button"
-              >
-                <i class="fa fa-play"></i>
-                Go To Project
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>`
-  )
+function onPortfolioModal(projId) {
+  if (!projId) return
 
-  $('.portfolio-modals').html(strHtml)
+  const proj = getProjById(projId)
+  const $elModal = $('.modal-dialog')
+  $elModal.find('h2').text(proj.name)
+  $elModal.find('.modal-title').text(proj.title)
+  $elModal.find('img').attr('src', `img/portfolio/${proj.id}.png`)
+  $elModal.find('.modal-desc').text(proj.desc)
+  $elModal.find('li:nth-of-type(1) span').text(proj.publishedAt)
+  $elModal.find('li:nth-of-type(2) span').text(proj.dayAtCourse)
+  $elModal.find('li:nth-of-type(3) span').text(proj.labels.join(', '))
+  
+  $elModal.find('button').off('click', onGoToProject)
+  $elModal.find('button').click({ id: proj.id }, onGoToProject)
+}
+
+function onGoToProject(ev) {
+  const proj = getProjById(ev.data.id)
+  const url = proj.url ? proj.url : `projs/${proj.id}/`
+  window.open(url, '_blank')
 }

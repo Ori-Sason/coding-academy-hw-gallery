@@ -86,3 +86,7 @@ var gProjs = [
 function getProjects() {
   return gProjs
 }
+
+function getProjById(projId){
+  return gProjs.find(proj => proj.id === projId)
+}

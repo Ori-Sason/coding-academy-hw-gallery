@@ -289,7 +289,7 @@ header.masthead .intro-text .intro-heading {
   margin: 0 0 15px;
 }
 
-#portfolio .portfolio-item img{
+#portfolio .portfolio-item img {
   width: 100%;
   aspect-ratio: 1/1;
   object-fit: cover;
@@ -413,6 +413,7 @@ header.masthead .intro-text .intro-heading {
   margin-bottom: 30px;
 }
 .portfolio-modal .modal-content button {
+  color: #222222;
   cursor: pointer;
 }
 .portfolio-modal .close-modal {
