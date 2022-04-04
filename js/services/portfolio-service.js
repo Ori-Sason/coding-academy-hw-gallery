@@ -52,7 +52,7 @@ var gProjs = [
     labels: ['board-games', 'front-end'],
   },
   {
-    id: '06-Minesweeper',
+    id: '06-minesweeper',
     name: 'minesweeper',
     title: 'My first sprint project',
     desc: 'My first spring project, Written in vanilla JavaScript. Explore the new features.',
