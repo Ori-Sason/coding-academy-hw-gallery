@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Pac Man</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/app.css" />
+  </head>
+
+  <body onload="init()" onkeyup="movePacman(event)">
+    <h1>Pac Man</h1>
+    <div class="container">
+  
+      <div class="game-status">
+        <div class="game-is-on">
+          <h2>Go Go Go!!</h2>
+          <img src="img/pacman.png" alt="R.I.P" />
+        </div>
+
+        <div class="game-over-win">
+          <h2>You Won!!</h2>
+          <img src="img/happy-smiley.gif" alt="R.I.P" />
+        </div>
+
+        <div class="game-over-loss">
+          <img src="img/rip.png" alt="R.I.P" />
+        </div>
+        <button onclick="init()">Restart</button>
+      </div>
+
+      <div class="game-contianer">
+        <h2>Score: <span>0</span></h2>
+
+        <div class="board-container">
+          <!-- game board is rendered here -->
+        </div>
+      </div>
+    </div>
+
+    <script src="js/utils.js"></script>
+    <script src="js/pacman.js"></script>
+    <script src="js/ghost.js"></script>
+    <script src="js/cherry.js"></script>
+    <script src="js/game.js"></script>
+  </body>
+</html>

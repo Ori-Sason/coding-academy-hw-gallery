@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coding Calculator</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body onkeyup="keyUp(event)">
+    <h1>Coding Calculator</h1>
+    <table>
+      <tr class="calculate-display">
+        <td colspan="3">0</td>
+        <td class="memory-display">0</td>
+      </tr>
+      <tr>
+          <td onclick="setMemoryOperations(this)">MC</td>
+          <td onclick="setMemoryOperations(this)">MR</td>
+          <td onclick="setMemoryOperations(this)">MS</td>
+          <td onclick="setMemoryOperations(this)">M+</td>
+      </tr>
+      <tr>
+        <td onclick="clearEntirely()">CE</td>
+        <td onclick="clearCurrent()">C</td>
+        <td onclick="backspace()">&#x232b;</td>
+        <td onclick="setOp(this)">&#247;</td>
+      </tr>
+      <tr>
+        <td onclick="addDigit(this)">7</td>
+        <td onclick="addDigit(this)">8</td>
+        <td onclick="addDigit(this)">9</td>
+        <td onclick="setOp(this)">x</td>
+      </tr>
+      <tr>
+        <td onclick="addDigit(this)">4</td>
+        <td onclick="addDigit(this)">5</td>
+        <td onclick="addDigit(this)">6</td>
+        <td onclick="setOp(this)">-</td>
+      </tr>
+      <tr>
+        <td onclick="addDigit(this)">1</td>
+        <td onclick="addDigit(this)">2</td>
+        <td onclick="addDigit(this)">3</td>
+        <td onclick="setOp(this)">+</td>
+      </tr>
+      <tr>
+        <td onclick="addDigit(this)">0</td>
+        <td onclick="addDot()">.</td>
+        <td onclick="result()" colspan="2">=</td>
+      </tr>
+    </table>
+
+    <script src="js/main.js"></script>
+    <script src="js/calculations.js"></script>
+    <script src="js/display.js"></script>
+    <script src="js/events.js"></script>
+    <script src="js/memoryOps.js"></script>
+  </body>
+</html>

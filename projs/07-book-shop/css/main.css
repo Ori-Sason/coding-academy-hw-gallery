@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  padding-left: 20px;
+  background-color: rgb(150, 197, 251);
+  font-family: 'Roboto', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: 'Kalam', cursive;
+  text-decoration: underline;
+  font-size: 55px;
+  color: rgb(11, 11, 110);
+  text-shadow: -8px -4px 2px rgb(128, 177, 230);
+}
+
+.backlog {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(22, 21, 21, 0.8);
+}
+
+.config {
+  display: flex;
+  height: fit-content;
+}
+
+.pages {
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+}
+
+.pages li {
+  width: 40px;
+  padding: 7px;
+  text-align: center;
+  background-image: linear-gradient(rgb(141, 248, 209), rgb(11, 226, 147));
+  border: 2px solid rgb(51, 228, 163);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+table {
+  margin: 20px 0;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+th,
+td {
+  min-width: 50px;
+  padding: 10px;
+  border: 1px solid rgb(39, 164, 239);
+}
+
+th {
+  background-image: linear-gradient(rgb(182 228 255), rgb(39 164 253));
+}
+
+th:not(th:last-of-type) {
+  cursor: pointer;
+}
+
+th:nth-of-type(2) {
+  width: 300px;
+}
+
+th:nth-of-type(3) {
+  width: 100px;
+}
+
+th span {
+  float: right;
+}
+
+td {
+  background-color: rgb(208, 238, 255);
+}
+
+table td:nth-of-type(1),
+table td:nth-of-type(3) {
+  text-align: center;
+}
+
+.modal {
+  background-color: rgb(41 107 164);
+  padding: 10px 20px;
+  position: fixed;
+  top: 0px;
+  right: -400px;
+  height: 80vh;
+  max-width: 400px;
+  color: whitesmoke;
+  transition: right 0.5s;
+  border-radius: 6px;
+}
+.modal.open {
+  right: -4px;
+}
+
+.modal-img {
+  margin: 0 25px 25px 0;
+  height: 135px;
+  float: left;
+}
+
+.modal-description + p {
+  margin: 0;
+  clear: both;
+}
+
+.modal-rate {
+  display: inline-block;
+  width: 20px;
+  text-align: center;
+}
+
+button {
+  cursor: pointer;
+}
+
+.btn {
+  padding: 7px;
+  width: 70px;
+  border-radius: 4px;
+  color: whitesmoke;
+}
+
+.btn.new-btn {
+  width: unset;
+}
+
+.btn.bgc-grd-blue {
+  background-image: linear-gradient(rgb(28, 172, 255), rgb(39, 39, 253));
+  border: 1px solid rgb(0, 98, 255);
+}
+
+.btn.bgc-grd-red {
+  background-image: linear-gradient(rgb(255, 117, 117), rgb(255, 56, 56));
+  border: 1px solid rgb(255, 38, 0);
+}
+
+.btn.bgc-grd-yellow {
+  background-image: linear-gradient(rgb(255, 183, 101), rgb(255, 136, 0));
+  border: 1px solid rgb(255, 143, 15);
+}
+
+.btn.black {
+  width: 35px;
+  margin: 0 10px;
+  background-color: #18191b;
+  border: none;
+}

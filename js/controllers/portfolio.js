@@ -24,7 +24,7 @@ function renderPortfolioItems() {
       </div>
       <img
         class="img-fluid"
-        src="img/portfolio/${proj.id}-thumbnail.jpg"
+        src="img/portfolio/${proj.id}.png"
         alt=""
       />
     </a>
@@ -65,7 +65,7 @@ function renderPortfolioModals() {
               </p>
               <img
                 class="img-fluid d-block mx-auto"
-                src="img/portfolio/${proj.id}-thumbnail.jpg"
+                src="img/portfolio/${proj.id}.png"
                 alt=""
               />
               <p>
@@ -79,10 +79,11 @@ function renderPortfolioModals() {
               <button
                 class="btn btn-primary"
                 data-dismiss="modal"
+                onclick=(window.open("${proj.url? proj.url : 'projs/'+ proj.id +'/'}"))
                 type="button"
               >
-                <i class="fa fa-times"></i>
-                Close Project
+                <i class="fa fa-play"></i>
+                Go To Project
               </button>
             </div>
           </div>

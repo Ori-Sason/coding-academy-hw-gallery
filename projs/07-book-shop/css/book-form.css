@@ -1,0 +1,52 @@
+.book-form {
+  display: none;
+  width: 410px;
+  padding: 0 30px 15px 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid red;
+  color: whitesmoke;
+  background-image: linear-gradient(rgb(27, 83, 214), rgb(7, 139, 216));
+  border: 1px solid rgb(27, 83, 214);
+  border-radius: 4px;
+}
+
+.book-form ul {
+  list-style: none;
+  padding: 0;
+}
+
+.book-form li {
+  margin-top: 20px;
+}
+
+.book-form input,
+.book-form textarea {
+  width: 100%;
+  padding: 8px;
+  font-family: 'Roboto', sans-serif;
+  border: 1px solid black;
+  box-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.book-form textarea {
+  width: 100%;
+  max-width: 100%;
+  height: 200px;
+}
+
+.book-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.book-form button {
+  float: right;
+  margin-left: 20px;
+  background-color: #212427;
+  border: none;
+  box-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+}

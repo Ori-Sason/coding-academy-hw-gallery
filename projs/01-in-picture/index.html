@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>In picture</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/end-game.css" />
+  </head>
+
+  <body onload="initGame()">
+    <div class="main-containter">
+      <h1>In Picture</h1>
+
+      <div class="end-game">
+        <h2>congratulations!</h2>
+        <p>You hit <span>x</span>/X</p>
+        <img src="img/happy-smiley.gif" alt="celebrating smiley" />
+        <button type="button" onclick="restartGame()">Try Again</button>
+      </div>
+
+      <div class="game">
+        <h2>What is this Icon?</h2>
+        <div class="question">
+          <!-- questions will be rendered here -->
+        </div>
+      </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/restart.js"></script>
+    <script src="js/gameplay.js"></script>
+  </body>
+</html>

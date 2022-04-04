@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/book-form.css" />
+    <title>Book Shop</title>
+  </head>
+
+  <body onload="init()">
+    <div class="backlog" onclick="closeForm()"></div>
+    <h1>Welcome to my bookshop</h1>
+    <div class="config">
+      <button class="btn bgc-grd-blue new-btn" onclick="openForm(true)">
+        Create new book
+      </button>
+      <ul class="pages">
+        <!-- pages are rendered here -->
+      </ul>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th onclick="onSortBy(this, 'id')">Id <span>↓</span></th>
+          <th onclick="onSortBy(this, 'name')">Title <span>↓</span></th>
+          <th onclick="onSortBy(this, 'price')">Price <span>↓</span></th>
+          <th colspan="3">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- tbody is rendered here -->
+      </tbody>
+    </table>
+
+    <section class="modal">
+      <button class="btn black" onclick="onCloseModal()">X</button>
+      <h2></h2>
+      <img class="modal-img" src="" alt="" />
+      <p class="modal-description">Description</p>
+      <p><b>Price:</b> <span class="modal-price"></span></p>
+      <p class="modal-rate-para">
+        <!-- rate is rendered here -->
+      </p>
+    </section>
+
+    <section class="book-form">
+      <h2>Add new book</h2>
+      <form onsubmit="onUpdateBook(event)">
+        <ul>
+          <li>
+            <label for="form-title">Book Title</label>
+            <input
+              type="text"
+              name="form-title"
+              id="form-title"
+              placeholder="Enter book name"
+              required
+            />
+          </li>
+          <li>
+            <label for="book-name">Description</label>
+            <textarea
+              name="form-description"
+              id="form-description"
+              placeholder="Enter book description (optional)"
+            ></textarea>
+          </li>
+          <li>
+            <label for="form-price">Price</label>
+            <input
+              type="number"
+              step=".01"
+              name="form-price"
+              id="book-name"
+              placeholder="Enter book price in USD"
+              required
+            />
+          </li>
+        </ul>
+        <button type="submit" class="btn">Add</button>
+        <button type="button" class="btn" onclick="closeForm()">Cancel</button>
+      </form>
+    </section>
+
+    <script src="js/services/utils-services.js"></script>
+    <script src="js/services/storage-service.js"></script>
+    <script src="js/services/book-service.js"></script>
+    <script src="js/controllers/main.js"></script>
+    <script src="js/controllers/side-modal.js"></script>
+    <script src="js/controllers/book-form.js"></script>
+  </body>
+</html>

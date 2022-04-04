@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'roboto', sans-serif;
+  background-color: rgb(184, 239, 255);
+}
+
+.main-containter {
+  width: 400px;
+  height: 550px;
+  margin: 40px auto;
+  padding: 10px 30px;
+  text-align: center;
+  border: 3px solid rgb(44, 160, 255);
+  box-shadow: 4px 4px 10px rgb(175, 175, 175);
+  border-radius: 14px;
+  background-color: rgb(166, 227, 255);
+}
+
+h1 {
+  font-size: 48px;
+  flex-grow: 0;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+.game{
+  transition: opacity 0.5s;
+}
+
+.question {
+  transition: opacity 0.5s;
+}
+
+.question img {
+  height: 120px;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+li, button {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: rgb(45, 178, 255);
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  border: 3px solid rgb(4, 150, 235);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.option:hover {
+  background-color: rgb(4, 150, 235);
+}
+
+.wrong{
+    background-color: rgb(255, 73, 73);
+    border: 3px solid red;
+}
