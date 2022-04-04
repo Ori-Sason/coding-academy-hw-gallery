@@ -19,7 +19,7 @@ function renderPortfolioItems() {
       </div>
       <img
         class="img-fluid"
-        src="${proj.imgUrl}"
+        src="img/portfolio/${proj.id}-thumbnail.jpg"
         alt=""
       />
     </a>
