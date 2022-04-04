@@ -1,0 +1,108 @@
+body {
+  --color-green-100: #0bf8a9;
+  --color-green-200: #09dd96;
+  --color-green-300: #0ac385;
+  --color-green-500: #079465;
+  --color-green-700: #004e34;
+  --color-green-900: #000f0a;
+
+  margin: 0;
+  padding: 0;
+  font-family: 'Odibee Sans', cursive;
+  text-align: center;
+  color: white;
+  background-color: var(--color-green-900);
+}
+
+.container {
+  width: 500px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+h2 {
+  margin-top: 10px;
+  font-size: 24px;
+  text-align: left;
+}
+
+.game-over {
+  margin-bottom: 20px;
+  padding: 20px;
+  display: none;
+  width: 98%;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: var(--color-green-500);
+  border-radius: 8px;
+  color: var(--color-green-900);
+  box-shadow: 2px 2px 8px var(--color-green-300);
+}
+
+.game-over-lost {
+  display: none;
+}
+
+.game-over button {
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: inherit;
+  width: 33%;
+  line-height: 30px;
+  color: white;
+  border: 2px solid var(--color-green-900);
+  border-radius: 8px;
+  background-color: var(--color-green-700);
+  box-shadow: 2px 2px 8px black;
+  cursor: pointer;
+}
+
+.game-over button:active{
+    box-shadow: inset 2px 2px 8px var(--color-green-900);
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: separate;
+  --border-radius-corners: 20px;
+  border-radius: var(--border-radius-corners);
+  box-shadow: 0 0 100px 4px var(--color-green-500);
+}
+.cell {
+  overflow: hidden;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 80%;
+}
+.cell img {
+  width: 25px;
+  height: auto;
+}
+.floor {
+  background-color: var(--color-green-500);
+}
+.wall {
+  background-color: var(--color-green-700);
+}
+
+tr:first-of-type td:first-of-type {
+  border-radius: var(--border-radius-corners) 0 0 0;
+}
+tr:first-of-type td:last-of-type {
+  border-radius: 0 var(--border-radius-corners) 0 0;
+}
+
+tr:last-of-type td:first-of-type {
+  border-radius: 0 0 0 var(--border-radius-corners);
+}
+tr:last-of-type td:last-of-type {
+  border-radius: 0 0 var(--border-radius-corners) 0;
+}
