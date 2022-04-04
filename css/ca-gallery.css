@@ -562,8 +562,10 @@ header.masthead .intro-text .intro-heading {
     text-align: center;
 }
 .team-member img {
-    width: 225px;
-    height: 225px;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: top;
     border: 7px solid white;
 }
 .team-member h4 {
