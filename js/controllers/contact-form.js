@@ -9,13 +9,13 @@ function toggleAside(){
 
 function onContactFormSubmit(ev){
     ev.preventDefault()
-    const $elEmail = $('.offcanvas-aside input[type=email]')
+    // const $elEmail = $('.offcanvas-aside input[type=email]')
     const $elSubject = $('.offcanvas-aside input[type=text]')
     const $elBody = $('.offcanvas-aside textarea')
 
-    const emailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${$elEmail.val()}&su=${$elSubject.val()}&body=${$elBody.val()}`
+    const emailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=orisason1@gmail.com&su=${$elSubject.val()}&body=${$elBody.val()}`
     
-    $elEmail.val('')
+    // $elEmail.val('')
     $elSubject.val('')
     $elBody.val('')
 
