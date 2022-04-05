@@ -11,12 +11,11 @@ function renderPortfolioItems() {
   const projects = getProjects()
   const strHtml = projects.map(
     (proj) =>
-      `<div class="col-md-4 col-sm-6 portfolio-item">
+      `<div class="col-md-4 col-sm-6 portfolio-item" data-proj-id="${proj.id}">
     <a
       class="portfolio-link"
       data-toggle="modal"
       href="#portfolioModal"
-      onclick="onPortfolioModal('${proj.id}')"
     >
       <div class="portfolio-hover">
         <div class="portfolio-hover-content">
@@ -37,6 +36,12 @@ function renderPortfolioItems() {
   )
 
   $('.portfolio-grid').html(strHtml)
+
+  $('.portfolio-link').on('click', function(){
+    const projId = $(this).closest('[data-proj-id]').data('projId')
+    console.log($($(this).closest('[data-proj-id]')))
+    onPortfolioModal(projId)
+  })
 }
 
 function onPortfolioModal(projId) {
