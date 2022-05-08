@@ -1,0 +1,19 @@
+.home {
+  text-align: center;
+}
+
+.home h1 {
+  font-family: Lobster;
+  font-size: 5em;
+  margin: 0.5em 0;
+}
+
+.home h2 {
+  font-size: 3em;
+  margin: 0.5em 0;
+}
+
+.home h3 {
+  font-size: 1.7em;
+  margin: 0.5em 0;
+}

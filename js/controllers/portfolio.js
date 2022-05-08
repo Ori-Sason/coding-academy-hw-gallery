@@ -8,7 +8,7 @@ function init() {
 }
 
 function renderPortfolioItems() {
-  const projects = getProjects()
+  const projects = getProjects().slice().sort((a, b) => b.id.substring(0,2) - a.id.substring(0,2))
   const strHtml = projects.map(
     (proj) =>
       `<div class="col-md-4 col-sm-6 portfolio-item" data-proj-id="${proj.id}">
@@ -37,7 +37,7 @@ function renderPortfolioItems() {
 
   $('.portfolio-grid').html(strHtml)
 
-  $('.portfolio-link').on('click', function(){
+  $('.portfolio-link').on('click', function () {
     const projId = $(this).closest('[data-proj-id]').data('projId')
     console.log($($(this).closest('[data-proj-id]')))
     onPortfolioModal(projId)
@@ -56,7 +56,7 @@ function onPortfolioModal(projId) {
   $elModal.find('li:nth-of-type(1) span').text(proj.publishedAt)
   $elModal.find('li:nth-of-type(2) span').text(proj.dayAtCourse)
   $elModal.find('li:nth-of-type(3) span').text(proj.labels.join(', '))
-  
+
   $elModal.find('button').off('click', onGoToProject)
   $elModal.find('button').click({ id: proj.id }, onGoToProject)
 }

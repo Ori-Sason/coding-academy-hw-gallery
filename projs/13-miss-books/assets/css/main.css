@@ -1,0 +1,26 @@
+/* SETUP */
+@import './setup/vars.css';
+@import './setup/typography.css';
+
+/* BASICS */
+@import './basics/base.css';
+@import './basics/layout.css';
+@import './basics/helper.css';
+
+/* PAGES */
+@import './pages/home.css';
+@import './pages/about.css';
+@import './pages/book-app.css';
+
+/* COMPONENTS */
+@import './cmps/app-header.css';
+@import './cmps/add-book.css';
+@import './cmps/book-details.css';
+@import './cmps/book-filter.css';
+@import './cmps/book-list.css';
+@import './cmps/book-preview.css';
+@import './cmps/long-txt.css';
+@import './cmps/book-review-form.css';
+@import './cmps/book-reviews-list.css';
+@import './cmps/stars-rate.css';
+@import './cmps/user-msg.css';

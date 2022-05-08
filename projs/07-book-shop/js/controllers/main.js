@@ -14,9 +14,9 @@ function renderBooks() {
         <td>${book.id}</td>
         <td>${book.name}</td>
         <td>$ ${book.price}</td>
-        <td><button class="btn bgc-grd-blue" onclick="openBookModal(${book.id})">Read</button></td>
-        <td><button class="btn bgc-grd-yellow" onclick="openForm(false, ${book.id})">Update</button></td>
-        <td><button class="btn bgc-grd-red" onclick="onDelete(${book.id})">Delete</button></td>
+        <td><button class="btn bgc-grd-blue" onclick="openBookModal(${book.id})" data-trans="btn-read">Read</button></td>
+        <td><button class="btn bgc-grd-yellow" onclick="openForm(false, ${book.id})" data-trans="btn-update">Update</button></td>
+        <td><button class="btn bgc-grd-red" onclick="onDelete(${book.id})" data-trans="btn-delete">Delete</button></td>
         </tr>
         `
   })

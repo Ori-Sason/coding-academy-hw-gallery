@@ -7,9 +7,10 @@ function openForm(isNewBook, bookId) {
   gIsNewBookForm = isNewBook
   const elFormSection = document.querySelector('.book-form')
 
-  elFormSection.querySelector('h2').innerText = isNewBook
-    ? 'Add new book'
-    : 'Update price'
+  const elH2 = elFormSection.querySelector('h2')
+  elH2.innerText = isNewBook
+    ? getTransText(elH2, 'add') //'Add new book'
+    : getTransText(elH2, 'update') //'Update price'
 
   //title
   const elTitle = elFormSection.querySelector('li')
@@ -29,12 +30,19 @@ function openForm(isNewBook, bookId) {
   }
 
   //submit button
-  elFormSection.querySelector('button[type=submit]').innerText = isNewBook
-    ? 'Add'
-    : 'Update'
+  const elBtn = elFormSection.querySelector('button[type=submit]')
+  elBtn.innerText = isNewBook
+    ? getTransText(elBtn, 'add')
+    : getTransText(elBtn, 'update')
 
   elFormSection.style.display = 'block'
   document.querySelector('.backlog').style.display = 'block'
+}
+
+function getTransText(el, action){
+  const trans = getTrans()
+  const key = el.dataset.trans
+  return trans[key][action][getCurrLang()]
 }
 
 function onUpdateBook(ev) {

@@ -105,6 +105,7 @@ function _createBooks() {
   _createBook(
     'Think and Grow Rich',
     7.89,
+    'en',
     'Think and Grow Rich reveals the secrets that can bring you fortune. By suppressing negative thoughts and keeping your focus on the long term, you can find true and lasting success.',
     'img/think-and-grow-rich.jpg'
   )
@@ -112,6 +113,7 @@ function _createBooks() {
   _createBook(
     'Rich Dad Poor Dad',
     7.18,
+    'en',
     "Rich Dad Poor Dad is Robert's story of growing up with two dads — his real father and the father of his best friend, his rich dad — and the ways in which both men shaped his thoughts about money and investing. The book explodes the myth that you need to earn a high income to be rich and explains the difference between working for money and having your money work for you.",
     'img/rich-dad-poor-dad.jpg'
   )
@@ -119,6 +121,7 @@ function _createBooks() {
   _createBook(
     'The 80/20 Principle',
     11.39,
+    'en',
     'Be more effective with less effort by learning how to identify and leverage the 80/20 principle: that 80 percent of all our results in business and in life stem from a mere 20 percent of our efforts.',
     'img/the-80-20-principle.jpg'
   )
@@ -126,6 +129,7 @@ function _createBooks() {
   _createBook(
     'The Law of Success',
     20.72,
+    'en',
     "The Law of Success is the golden key to Hill's thought--his complete and unabridged mind-power method for achieving your goals. After interviewing dozens of industrialists, diplomats, thought leaders, and successful people from all walks of life, the young Hill distilled what he learned into these fifteen core lessons, organized with an introductory chapter, 'The Master Mind,' that serves as a primer to Hill's overall philosophy.",
     'img/the-law-of-success.jpg'
   )
@@ -133,6 +137,7 @@ function _createBooks() {
   _createBook(
     'The 7 Habits of Highly Effective People',
     17.39,
+    'en',
     'One of the most inspiring and impactful books ever written, The 7 Habits of Highly Effective People has captivated readers for nearly three decades. It has transformed the lives of presidents and CEOs, educators and parents—millions of people of all ages and occupations. Now, this 30th anniversary edition of the timeless classic commemorates the wisdom of the 7 Habits with modern additions from Sean Covey.',
     'img/the-7-habits-of-highly-successful-people.jpg'
   )
@@ -141,6 +146,7 @@ function _createBooks() {
 function _createBook(
   name,
   price,
+  lang = 'en',
   description = makeLorem(),
   imgUrl = 'img/default-book.jpg'
 ) {
@@ -151,5 +157,6 @@ function _createBook(
     price,
     imgUrl,
     rate: 0,
+    lang
   })
 }

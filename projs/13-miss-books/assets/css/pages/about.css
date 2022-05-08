@@ -1,0 +1,21 @@
+.about h2,
+.about p {
+  margin-bottom: 1em;
+}
+
+.about h2 {
+  font-size: 3em;
+}
+
+.about p {
+  font-size: 1.3em;
+}
+
+.about p:first-of-type {
+    font-weight: bold;
+}
+
+.about p:first-of-type span{
+    text-decoration: underline;
+    color: red;
+}

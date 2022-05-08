@@ -11,85 +11,116 @@
 
   <body onload="init()">
     <div class="backlog" onclick="closeForm()"></div>
-    <h1>Welcome to my bookshop</h1>
-    <div class="config">
-      <button class="btn bgc-grd-blue new-btn" onclick="openForm(true)">
-        Create new book
-      </button>
-      <ul class="pages">
-        <!-- pages are rendered here -->
+    
+    <div class="lang-flag">
+      <ul>
+        <li onclick="onChangeLang('en')">English</li>
+        <li onclick="onChangeLang('he')">עברית</li>
       </ul>
     </div>
 
-    <table>
-      <thead>
-        <tr>
-          <th onclick="onSortBy(this, 'id')">Id <span>↓</span></th>
-          <th onclick="onSortBy(this, 'name')">Title <span>↓</span></th>
-          <th onclick="onSortBy(this, 'price')">Price <span>↓</span></th>
-          <th colspan="3">Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- tbody is rendered here -->
-      </tbody>
-    </table>
+    <header>
+      <h2>My Bookshop</h3>
+      <div class="languages" onclick="toggleLangMenu()">
+        <img src="img/flags/en.png" alt="" /> <span>&#x25BC;</span>
+      </div>
+    </header>
+    
+    <main>
+      <h1 data-trans="title">Welcome to my bookshop</h1>
 
-    <section class="modal">
-      <button class="btn black" onclick="onCloseModal()">X</button>
-      <h2></h2>
-      <img class="modal-img" src="" alt="" />
-      <p class="modal-description">Description</p>
-      <p><b>Price:</b> <span class="modal-price"></span></p>
-      <p class="modal-rate-para">
-        <!-- rate is rendered here -->
-      </p>
-    </section>
-
-    <section class="book-form">
-      <h2>Add new book</h2>
-      <form onsubmit="onUpdateBook(event)">
-        <ul>
-          <li>
-            <label for="form-title">Book Title</label>
-            <input
-              type="text"
-              name="form-title"
-              id="form-title"
-              placeholder="Enter book name"
-              required
-            />
-          </li>
-          <li>
-            <label for="book-name">Description</label>
-            <textarea
-              name="form-description"
-              id="form-description"
-              placeholder="Enter book description (optional)"
-            ></textarea>
-          </li>
-          <li>
-            <label for="form-price">Price</label>
-            <input
-              type="number"
-              step=".01"
-              name="form-price"
-              id="book-name"
-              placeholder="Enter book price in USD"
-              required
-            />
-          </li>
+      <div class="config">
+        <button class="btn bgc-grd-blue new-btn" onclick="openForm(true)" data-trans="create-new-book">
+          Create new book
+        </button>
+        <ul class="pages">
+          <!-- pages are rendered here -->
         </ul>
-        <button type="submit" class="btn">Add</button>
-        <button type="button" class="btn" onclick="closeForm()">Cancel</button>
-      </form>
-    </section>
+      </div>
+  
+      <table>
+        <thead>
+          <tr>
+            <th onclick="onSortBy(this, 'id')" data-trans="header-id">Id <span>↓</span></th>
+            <th onclick="onSortBy(this, 'name')" data-trans="header-title">Title <span>↓</span></th>
+            <th onclick="onSortBy(this, 'price')" data-trans="header-price">Price <span>↓</span></th>
+            <th colspan="3" data-trans="header-actions">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- tbody is rendered here -->
+        </tbody>
+      </table>
+  
+      <section class="modal">
+        <button class="btn black" onclick="onCloseModal()">X</button>
+        <section class="modal-book-details">
+          <h2></h2>
+          <img class="modal-img" src="" alt="" />
+          <p class="modal-description">Description</p>
+        </section>
+        <section class="modal-config">
+          <p><b data-trans="modal-price">Price:</b> <span class="modal-price"></span></p>
+          <p>
+            <b data-trans="modal-rate">Rate:</b>
+            <span class="modal-rate-para">
+              <!-- rate is rendered here -->
+            </span>
+          </p>
+        </section>
+      </section>
+  
+      <section class="book-form">
+        <h2 data-trans="form-title">Add new book</h2>
+        <form onsubmit="onUpdateBook(event)">
+          <ul>
+            <li>
+              <label for="form-title" data-trans="form-label-title">Book Title</label>
+              <input
+                type="text"
+                name="form-title"
+                id="form-title"
+                placeholder="Enter book name"
+                data-trans="form-input-title"
+                required
+              />
+            </li>
+            <li>
+              <label for="book-name" data-trans="form-label-desc">Description</label>
+              <textarea
+                name="form-description"
+                id="form-description"
+                placeholder="Enter book description (optional)"
+                data-trans="form-input-desc"
+              ></textarea>
+            </li>
+            <li>
+              <label for="form-price" data-trans="form-label-price">Price</label>
+              <input
+                type="number"
+                step=".01"
+                name="form-price"
+                id="book-name"
+                placeholder="Enter book price in USD"
+                data-trans="form-input-price"
+                required
+              />
+            </li>
+          </ul>
+          <button type="submit" class="btn" data-trans="form-btn-add">Add</button>
+          <button type="button" class="btn" onclick="closeForm()" data-trans="form-btn-cancel">Cancel</button>
+        </form>
+      </section>
+    </main>
+    
 
     <script src="js/services/utils-services.js"></script>
     <script src="js/services/storage-service.js"></script>
     <script src="js/services/book-service.js"></script>
+    <script src="js/services/lang-service.js"></script>
     <script src="js/controllers/main.js"></script>
     <script src="js/controllers/side-modal.js"></script>
     <script src="js/controllers/book-form.js"></script>
+    <script src="js/controllers/languages.js"></script>
   </body>
 </html>
