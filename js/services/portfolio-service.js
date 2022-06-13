@@ -153,7 +153,7 @@ var gProjs = [
     labels: ['backend', 'React', 'Web Sockets', 'SASS'],
   },
   {
-    id: '16-Wixy',
+    id: '16-wixy',
     name: 'Wixy',
     title: 'Fianl Project. Build your website with Wixy',
     desc: 'Website builder based on Wix. Collaborating with Alex Yakovlev and Vicky Polatov.',
