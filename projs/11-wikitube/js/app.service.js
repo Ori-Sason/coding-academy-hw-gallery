@@ -1,5 +1,3 @@
-import { apiService } from './api.service.js'
-
 export const appService = {
   getVidAndWiki,
   getCurrentVideos,
@@ -22,7 +20,7 @@ function getVidAndWiki(search) {
 }
 
 function getVideos(search) {
-  const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&videoEmbeddable=true&type=video&key=${apiService.getYouTubeApiKey()}&q=%22${search}%22`
+  const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&videoEmbeddable=true&type=video&key=AIzaSyB2Na7Kx7swW4SPkbgj4slrnEPVg8EQ47Q&q=%22${search}%22`
   return axios.get(url).then((res) => {
     gCurrentVideos = res.data.items.map((vid) => ({
       id: vid.id.videoId,
