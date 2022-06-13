@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preload" as="font" href="fonts/Fontdiner-Swanky/FontdinerSwanky-Regular.ttf" type="font/ttf" crossorigin="anonymous">
+    <link rel="preload" as="font" href="fonts/Lobster/Lobster-Regular.ttf" type="font/ttf" crossorigin="anonymous">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Meme Generator</title>
+  </head>
+  <body onload="onInit()">
+    <div class="backlog"></div>
+    
+    <div class="body-container">
+      <header class="main-header main-layout">
+        <img class="logo" src="img/logo/LOGO.png" alt="meme generator logo" onclick="showGallery()"/>
+
+        <nav class="header-links">
+          <ul class="clean-list nav-bar">
+            <li><a href="#" class="gallery-link active-page" onclick="showGallery()">Gallery</a></li>
+            <li><a href="#" class="saved-memes-link" onclick="showSavedMemes()">Memes</a></li>
+            <!-- <li><a href="#">About</a></li> -->
+          </ul>
+        </nav>
+
+        <button class="btn-toggle-menu active-page" onclick="toggleMenu()"></button>
+      </header>
+      
+      <main class="main-layout">
+        <section class="main-gallery gallery ">
+          <header class="gallery-header">
+            <input
+              class="gallery-search text-input"
+              list="keywords-data-list"
+              placeholder="Enter keyword for search"
+              oninput="onSearch(this.value)"
+            />
+
+            <datalist id="keywords-data-list">
+              <!-- options are rendered here -->
+            </datalist>
+
+            <ul class="keywords-list clean-list">
+              <!-- keywords are rendered here -->              
+            </ul>
+
+            <button class="keywords-more-btn" onclick="onMoreKeywords(this)">More</button>
+          </header>
+
+          <main>
+            <ul class="image-gallery clean-list">
+              <!-- gallery images are rendered here -->
+            </ul>
+          </main>
+        </section>
+
+        <section class="main-editor hide">
+          <div class="canvas-container">
+            <canvas id="canvas"></canvas>
+          </div>
+
+          <div class="editor-config">
+            <input type="text" class="text-input" oninput="onChangeText(this.value)" />
+
+            <div class="text-selection">
+              <div class="icon-btn switch" onclick="onSwitchLine()"><img src="img/icons/switch.png" alt="Switch line" title="Switch Line"></div>
+              <div class="icon-btn add" onclick="onAddLine()"><img src="img/icons/add.png" alt="Add line" title="Add line"></div>
+              <div class="icon-btn trash" onclick="onDeleteLine()"><img src="img/icons/trash.png" alt="Delete line" title="Delete line"></div>
+            </div>
+
+            <div class="font-style">
+              <div class="icon-btn" onclick="onChangeFontSize('2')"><img src="img/icons/increase font - icon.png" alt="Increase font" title="Increase font"></div>
+              <div class="icon-btn" onclick="onChangeFontSize('-2')"><img src="img/icons/decrease font - icon.png" alt="Decrease font" title="Decrease font"></div>
+              <div class="icon-btn" onclick="onChangeAlignment('left')"><img src="img/icons/align-to-left.png" alt="Align left" title="Align left"></div>
+              <div class="icon-btn" onclick="onChangeAlignment('center')"><img src="img/icons/center-text-alignment.png" alt="Align center" title="Align center"></div>
+              <div class="icon-btn" onclick="onChangeAlignment('right')"><img src="img/icons/align-to-right.png" alt="Align right" title="Align right"></div>
+              
+              <select class="font-family-input text-input" onchange="onFontFamilyChange(this.value)">
+                  <!-- font families are rendered here -->
+              </select>
+              
+              <div class="invisible-btn">
+                  <div class="icon-btn"><img src="img/icons/text stroke.png" alt="A stroke" title="Text outline color"></div>
+                  <input type="color" oninput="onChangeStrokeColor(this.value)"/>
+              </div>
+              <div class="invisible-btn">
+                <div class="icon-btn"><img src="img/icons/paint-board-and-brush.png" alt="paint platte" title="Text fill color"></div>
+                <input type="color" oninput="onChangeFillColor(this.value)" value="#f5f5f5" />
+              </div>
+            </div>
+
+            <div class="stickers">
+              <ul class="stickers-list text-input clean-list">
+                <!-- stickers are rendered here -->
+              </ul>
+            </div>
+
+            <div class="save-meme">
+              <ul class="clean-list">
+                <li><a class="fa fa-share" href="#" onclick="onShare(event)">Share</a></li>
+                <li><a class="fa fa-save" href="#" onclick="onSaveMeme(this)">Save</a></li>
+                <li><a class="fa fa-download" href="#" onclick="onDownloadCanvas(event, this)" download="">Download</a></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="storage-gallery gallery hide">
+          <main>
+            <!-- gallery images are rendered here -->
+          </main>
+        </section>
+
+      </main>
+
+      <footer class="main-footer main-layout">
+        <p>☕ Coffeerights 2022 Ori Sason, nothing reserved</p>
+      </footer>
+    </div>
+
+    <script src="js/services/utils.service.js"></script>
+    <script src="js/services/storage.service.js"></script>
+    <script src="js/services/meme.service.js"></script>
+    <script src="js/controllers/gallery.controller.js"></script>
+    <script src="js/controllers/meme.controller.js"></script>
+    <script src="js/controllers/meme.storage.controller.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

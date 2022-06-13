@@ -1,0 +1,54 @@
+.backlog{
+  top: 0
+}
+
+.main-header {
+  margin: 1em auto;
+  padding: 1em 2em;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-size: 1em;
+  color: var(--bg-clr-100);
+  background-image: linear-gradient(
+    90deg,
+    var(--blue-clr-500),
+    var(--green-clr-500)
+  );
+  border-radius: 6em;
+}
+
+.main-header .logo {
+  height: 1em;
+  cursor: pointer;
+}
+
+.main-header .header-links .nav-bar {
+  display: flex;
+}
+
+.main-header .header-links a {
+  padding: 0.5em 1.5em;
+  border-radius: 6em;
+}
+
+.active-page {
+  color: var(--green-clr-200);
+  background-color: var(--bg-clr-100);
+}
+
+.main-header .btn-toggle-menu {
+  border-radius: 50%;
+  height: 2em;
+  aspect-ratio: 1/1;
+}
+
+.main-header .btn-toggle-menu::before {
+  content: '☰';
+}
+
+body.menu-open .main-header .btn-toggle-menu::before {
+  content: 'X';
+}

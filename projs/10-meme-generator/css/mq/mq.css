@@ -1,0 +1,153 @@
+/* MEDIUM SCREENS ONLY - HAMBURGER */
+@media screen and (max-width: 930px) {
+  .main-header .header-links .nav-bar {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 130px; /* FIX */
+    right: -100%;
+    transition: right 0.5s;
+    background-color: var(--bg-clr-800);
+    padding: 2em 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1em;
+    z-index: 2;
+  }
+
+  .backlog {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    right: -100%;
+    transition: right 0.5s;
+    background-color: var(--bg-clr-800);
+    z-index: 1;
+  }
+
+  body.menu-open .backlog {
+    right: 0;
+  }
+
+  body.menu-open .body-container {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+
+  body.menu-open .main-header .nav-bar {
+    right: 0;
+  }
+
+  body.menu-open .main-header .nav-bar > * {
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .main-header .header-links .nav-bar {
+    top: 100px; /* FIX */
+  }
+}
+
+/* END OF HAMBURGER SECTION*/
+
+/* MEDIUM */
+@media screen and (min-width: 470px) {
+  /* MAIN LAYOUT */
+  .main-layout {
+    width: 90%;
+    max-width: 600px;
+  }
+
+  /* MAIN HEADER */
+  .main-header {
+    font-size: 1.3125em;
+  }
+
+  .main-header .logo {
+    height: 2em;
+  }
+
+  /* GALLERY */
+  .main-gallery .gallery-header.keywords-open .keywords-list {
+    min-width: unset;
+    height: 15em;
+  }
+
+  /* EDITOR */
+
+  .editor-config .font-style {
+    grid-template-columns: repeat(5, 3em);
+    justify-items: unset;
+  }
+
+  .icon-btn {
+    height: 3em;
+  }
+
+  .editor-config .save-meme ul {
+    flex-direction: row;
+  }
+}
+
+/* LARGE */
+@media screen and (min-width: 930px) {
+  .btn-toggle-menu {
+    display: none;
+  }
+
+  /* MAIN LAYOUT */
+  body {
+    font-size: 1.2em;
+  }
+
+  .main-layout {
+    width: 90%;
+    max-width: 1260px;
+  }
+
+  /* GALLERY MAIN HEADER */
+  .main-gallery .gallery-header {
+    flex-wrap: nowrap;
+  }
+
+  .main-gallery .gallery-header .gallery-search {
+    flex-grow: 1;
+    min-width: unset;
+  }
+
+  /* GALLERY IMAGES */
+  .image-gallery {
+    grid-template-columns: repeat(auto-fill, 210px);
+    gap: 20px;
+  }
+
+  .image-gallery img {
+    max-width: 210px;
+  }
+
+  /* EDITOR */
+  .main-editor {
+    flex-direction: row;
+  }
+
+  .editor-config .font-style .font-family-input {
+    font-size: 90%;
+  }
+
+  .editor-config .stickers img:hover {
+    position: absolute;
+    bottom: 25px;
+    transform: translateX(-50%);
+    height: 70px;
+  }
+
+  .editor-config .stickers button:hover {
+    font-size: 1.5em;
+  }
+}
